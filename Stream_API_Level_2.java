@@ -16,7 +16,6 @@ public class Stream_API_Level_2
         
         
         // 11. Find second smallest number 
-        /*
         int secondSmallest = numbers.stream()
                                 .distinct()
                                 .sorted()
@@ -25,10 +24,9 @@ public class Stream_API_Level_2
                                 .orElse(-1);
                                 
         System.out.println(secondSmallest);
-        */
+        
         
         // 12. Reverse each string in List
-        /*
         List<String> revNames = names.stream()
                                     .map(s-> new StringBuilder(s).reverse().toString())
                                     .toList();
@@ -46,10 +44,9 @@ public class Stream_API_Level_2
                                         ));
         
         System.out.println(reversedOrder);      
-        */
+        
         
         // 13. Find duplicate elements in list 
-        /*
         Set<Integer> set1 = new HashSet<>();
         List<Integer> duplicateElements =  numbers.stream()
                                                 .filter(n -> !set1.add(n))
@@ -79,20 +76,16 @@ public class Stream_API_Level_2
                                        if (v > 1)
                                            System.out.println(k + " -> " + v);
                                    });
-        */
         
         // 14. find frequency of each number
-        /*
         Map<Integer,Long> freqMap = numbers.stream()
                                             .collect(Collectors.groupingBy(
                                                 Function.identity(),  // LinkedHashMap::new, add below line if insertion order needs tonbe preserved
                                                 Collectors.counting()));
                                             
         System.out.println(freqMap);
-        */
         
         // 15. separate even and odd numbers into two lists
-        /*
         Map<Boolean,List<Integer>> evenoddsList = numbers.stream()
                                                     .collect(Collectors.partitioningBy(n->n%2==0));
                                                     
@@ -103,18 +96,15 @@ public class Stream_API_Level_2
                                                 .collect(Collectors.groupingBy(
                                                     n -> n % 2 == 0 ? "Even" : "Odd"));
         System.out.println(resultEvenOdd);  
-        */
         
         // 16. check if all number are positive
-        /*
         Boolean areAllPositive = numbers.stream()
                                     .allMatch(n->n>0);
         
         System.out.println(areAllPositive);     
-        */
+        
         
         // 17. Merge two lists and remove duplicates
-        /*
         List<Integer> list2 = Arrays.asList(1,1,5,12,45, 15, 20, 24 ,25 , 100);
         List<Integer> resultMerge = Stream.concat(numbers.stream(), list2.stream())
                                 .distinct()
@@ -126,10 +116,8 @@ public class Stream_API_Level_2
                                     .flatMap(List::stream)
                                     .distinct()
                                     .toList();
-        */
         
         // 18. Get last elements using Streams
-        /*
         int lastElement = numbers.stream()
                             .skip(numbers.size()-1)
                             .findFirst()
@@ -141,10 +129,9 @@ public class Stream_API_Level_2
         Integer last11 = numbers.stream()
                             .reduce((a, b) -> b)    
                             .orElse(-1);
-        */
+        
         
         // 19. Find average of 10 numbers greater than 10
-        /*
         double avgOfGreaterThan10 = numbers.stream()
                                         .filter(n -> n > 10)
                                         .mapToInt(Integer::intValue)
@@ -158,7 +145,6 @@ public class Stream_API_Level_2
                             .filter(n -> n > 10)
                             .collect(Collectors.averagingInt(Integer::intValue));
         
-        */
 
         // 20. sort list based on last digit of numbers
         List<Integer> sortedBasedOnlastDigit = numbers.stream()
