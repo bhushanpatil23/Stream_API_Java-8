@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
-public class Stream_API_Level_1_Qs
+public class Stream_API_Level_1
 {
 	public static void main(String[] args) {
 
