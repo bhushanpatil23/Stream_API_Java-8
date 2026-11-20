@@ -14,34 +14,29 @@ public class Stream_API_Level_1_Qs
         List<String> names = Arrays.asList("Abhishek","Shahrukh","Ranveer","Salman","Ajay","Sunny","abcd","efghi", "","  ", " ", "done");
         
         //  1. find odd numbers from list which are divisible by 3 and 5 both
-        /*
         List<Integer> oddNums = numbers.stream()
                                     .filter(n->n%2 != 0 && n%3==0 && n%5==0)
                                     .toList();
         System.out.print(oddNums);      
-        */
+        
         
         // 2. List of strings into their lengths
-        /*
         List<Integer> strLengths = names.stream()
                                      .map(s->s.length())
                                      .toList();
         System.out.print(strLengths);
-        */
-        
+            
         // 3. remove all null and empty strings
-        /*
         List<String> reqStrings = names.stream()
                                     .filter(s-> s!= null && !s.trim().isEmpty())
                                     .toList();
         System.out.print(reqStrings);
-        */
+        
         
         // 4. find all numbers divisible by both 3 and 5
         // added in Q.1 
         
         // 5. Find total sum of squares of all numbers
-        /*
         int sumOfSquares = numbers.stream()
                                     .map(n->n*n)
                                     .reduce(0, Integer::sum); // if not pass default 0 then add .orElse(0);
@@ -51,11 +46,9 @@ public class Stream_API_Level_1_Qs
                                 .mapToInt(n->n*n)
                                 .sum();
         System.out.println(sumOfSquares1);
-        */
+        
         
         // 6. Get first non-repeated element from List
-        
-        /*
         Integer firstNonRepeated = numbers.stream()
                 .collect(Collectors.groupingBy(
                         Function.identity(),
@@ -109,21 +102,18 @@ public class Stream_API_Level_1_Qs
         
         
         System.out.println(firstNonRepeated4);
-        */
+        
         
         // 7. Count how many strings have length greater than 4
-        /*
         long countNames = names.stream()
                             .filter(s->s.length()>4)
                             .count();
                             
         System.out.println(countNames);
-        */
+        
         
         // 8. Find minimum number from List
-        
         // below is worst time complexity solution please use alternative solution below using Integer::compareTo
-        /*
         int minimumNumber = numbers.stream()
                                 .distinct()
                                 .sorted()
@@ -155,10 +145,8 @@ public class Stream_API_Level_1_Qs
                             .orElse(-1);
                             
         System.out.println( min+ " " + min1+ " " + min2 + " " + min3 + " " + min4);   
-        */
-        
+                
         //9. Get top 5 largest numbers
-        /*
         List<Integer> top5Largest = numbers.stream()
                                         .distinct()
                                         .sorted((a,b)-> b-a) // Comparator.reverseOrder() => this can also be pass in sorted()
@@ -166,10 +154,8 @@ public class Stream_API_Level_1_Qs
                                         .toList();
         
         System.out.println(top5Largest);
-        */
         
         // 10. convert list of string into comma separated string
-        /*
         String commaSepString = names.stream()
                                     .collect(Collectors.joining(",")); // if want comma space separated then pass => ", "
                                     
@@ -180,7 +166,7 @@ public class Stream_API_Level_1_Qs
         System.out.println(result);
         // for comma-separated String → List:
         List<String> list = Arrays.asList(str.split(","));
-        */
+        
         
 	}
 }
